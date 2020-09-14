@@ -14,7 +14,6 @@ const controlSearch = async () => {
     await state.search.getResults();
     searchView.renderResults(state.search.result);
   }
-  console.log(state);
 };
 
 elements.searchFrom.addEventListener("submit", (e) => {
