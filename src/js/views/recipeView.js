@@ -35,9 +35,7 @@ const createIngredients = (ingredient) => `
     <span class="recipe__unit">${ingredient.unit}</span>
     ${ingredient.ingredient}
 </div>
-</li>
-
-`;
+</li>`;
 
 export const renderRecipe = (recipe) => {
   const markup = `
