@@ -95,9 +95,7 @@ elements.recipe.addEventListener("click", (e) => {
     controlLike();
   }
 });
-state.likes = new Likes();
 const controlLike = () => {
-  if (!state.likes) state.likes = new Likes();
   const currentId = state.recipe.id;
   if (!state.likes.isLiked(currentId)) {
     const newLike = state.likes.addLike(currentId,state.recipe.title,state.recipe.author,state.recipe.img);
@@ -110,3 +108,12 @@ const controlLike = () => {
   }
   likesView.toggleLikeMenu(state.likes.getNumLikes());
 };
+window.addEventListener('load',() => {
+  state.likes = new Likes();
+  state.likes.readStorage();
+  likesView.toggleLikeMenu(state.likes.getNumLikes());
+  state.likes.likes.forEach(like => {
+    likesView.renderLike(like);
+  });
+
+});
