@@ -1,9 +1,6 @@
 import { elements } from "./base";
 
 export const renderItem = item =>{
-    if(item.count<=0){
-        item.count=0;
-    } 
     const markup = `
     <li class="shopping__item" data-itemid=${item.id}>
     <div class="shopping__count">
